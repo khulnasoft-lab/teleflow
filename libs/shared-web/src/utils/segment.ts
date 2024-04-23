@@ -1,5 +1,5 @@
 import { AnalyticsBrowser } from '@segment/analytics-next';
-import { IUserEntity } from '@novu/shared';
+import { IUserEntity } from '@teleflow/shared';
 
 export class SegmentService {
   private _segment: AnalyticsBrowser | null = null;

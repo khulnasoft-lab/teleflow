@@ -1,4 +1,4 @@
-export { ChannelTypeEnum, IEmailBlock, ITemplateVariable, OrderDirectionEnum } from '@novu/shared';
+export { ChannelTypeEnum, IEmailBlock, ITemplateVariable, OrderDirectionEnum } from '@teleflow/shared';
 
 export { EnvironmentId } from '../environment';
 export { ExternalSubscriberId, SubscriberId } from '../subscriber';

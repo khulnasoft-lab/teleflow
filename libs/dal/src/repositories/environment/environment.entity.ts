@@ -1,6 +1,6 @@
 import { Types } from 'mongoose';
 
-import { EncryptedSecret, IApiRateLimitMaximum } from '@novu/shared';
+import { EncryptedSecret, IApiRateLimitMaximum } from '@teleflow/shared';
 
 import type { OrganizationId } from '../organization';
 import type { ChangePropsValueType } from '../../types/helpers';

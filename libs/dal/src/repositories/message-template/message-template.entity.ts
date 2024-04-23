@@ -6,7 +6,7 @@ import {
   EnvironmentId,
   OrganizationId,
   MessageTemplateContentType,
-} from '@novu/shared';
+} from '@teleflow/shared';
 import { JSONSchema7 } from 'json-schema';
 
 import { IEmailBlock, ITemplateVariable } from './types';

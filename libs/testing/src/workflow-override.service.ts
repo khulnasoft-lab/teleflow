@@ -4,8 +4,8 @@ import {
   TenantRepository,
   WorkflowOverrideEntity,
   WorkflowOverrideRepository,
-} from '@novu/dal';
-import { ICreateWorkflowOverrideRequestDto } from '@novu/shared';
+} from '@teleflow/dal';
+import { ICreateWorkflowOverrideRequestDto } from '@teleflow/shared';
 import { faker } from '@faker-js/faker';
 
 export class WorkflowOverrideService {

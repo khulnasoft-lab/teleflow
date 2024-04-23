@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 import * as mongooseDelete from 'mongoose-delete';
-import { ActorTypeEnum } from '@novu/shared';
+import { ActorTypeEnum } from '@teleflow/shared';
 
 import { schemaOptions } from '../schema-default.options';
 import { MessageDBModel } from './message.entity';
@@ -237,7 +237,7 @@ messageSchema.index({
  *   _messageTemplateId: inAppChannel.template._id,
  *   channel: ChannelTypeEnum.IN_APP,
  *   transactionId: command.transactionId,
- *   providerId: InAppProviderIdEnum.Novu,
+ *   providerId: InAppProviderIdEnum.Teleflow,
  *   _feedId: inAppChannel.template._feedId,
  * });
  *
@@ -269,7 +269,7 @@ messageSchema.index({
 /*
  * This index was initially created to optimize:
  *
- * Path: apps/api/src/app/integrations/usecases/calculate-limit-novu-integration/calculate-limit-novu-integration.usecase.ts
+ * Path: apps/api/src/app/integrations/usecases/calculate-limit-teleflow-integration/calculate-limit-teleflow-integration.usecase.ts
  * Context: execute()
  * Query: count(
  *   {

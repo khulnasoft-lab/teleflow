@@ -1,4 +1,4 @@
-import { StepTypeEnum, IWorkflowStepMetadata, JobStatusEnum, ITenantDefine } from '@novu/shared';
+import { StepTypeEnum, IWorkflowStepMetadata, JobStatusEnum, ITenantDefine } from '@teleflow/shared';
 import { Types } from 'mongoose';
 
 import { NotificationStepEntity } from '../notification-template';

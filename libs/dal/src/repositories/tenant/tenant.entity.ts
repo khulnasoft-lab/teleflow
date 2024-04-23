@@ -1,4 +1,4 @@
-import { TenantCustomData } from '@novu/shared';
+import { TenantCustomData } from '@teleflow/shared';
 import { TenantId } from './types';
 import { EnvironmentId } from '../environment';
 import { ChangePropsValueType } from '../../types/helpers';

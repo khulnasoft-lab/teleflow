@@ -1,4 +1,4 @@
-import { AuthProviderEnum } from '@novu/shared';
+import { AuthProviderEnum } from '@teleflow/shared';
 import { createHash } from 'crypto';
 import { BaseRepository } from '../base-repository';
 import { IUserResetTokenCount, UserEntity, UserDBModel } from './user.entity';

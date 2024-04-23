@@ -1,4 +1,4 @@
-import { IPreferenceChannels, IWorkflowOverride } from '@novu/shared';
+import { IPreferenceChannels, IWorkflowOverride } from '@teleflow/shared';
 
 import type { OrganizationId } from '../organization';
 import type { EnvironmentId } from '../environment';

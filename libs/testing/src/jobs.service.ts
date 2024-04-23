@@ -1,6 +1,6 @@
 import { Queue } from 'bullmq';
-import { JobRepository, JobStatusEnum } from '@novu/dal';
-import { JobTopicNameEnum, StepTypeEnum } from '@novu/shared';
+import { JobRepository, JobStatusEnum } from '@teleflow/dal';
+import { JobTopicNameEnum, StepTypeEnum } from '@teleflow/shared';
 
 import { TestingQueueService } from './testing-queue.service';
 

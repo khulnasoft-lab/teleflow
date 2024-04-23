@@ -12,7 +12,7 @@ import {
   JobTopicNameEnum,
   StepTypeEnum,
   TriggerRecipientsPayload,
-} from '@novu/shared';
+} from '@teleflow/shared';
 import {
   UserEntity,
   EnvironmentEntity,
@@ -25,7 +25,7 @@ import {
   SubscriberRepository,
   LayoutRepository,
   IntegrationRepository,
-} from '@novu/dal';
+} from '@teleflow/dal';
 
 import { NotificationTemplateService } from './notification-template.service';
 import { TestServer, testServer } from './test-server.service';
@@ -223,7 +223,7 @@ export class UserSession {
       .put('/v1/organizations/branding')
       .send({
         color: '#2a9d8f',
-        logo: 'https://web.novu.co/static/images/logo-light.png',
+        logo: 'https://web.teleflow.khulnasoft.com/static/images/logo-light.png',
         fontColor: '#214e49',
         contentBackground: '#c2cbd2',
         fontFamily: 'Montserrat',

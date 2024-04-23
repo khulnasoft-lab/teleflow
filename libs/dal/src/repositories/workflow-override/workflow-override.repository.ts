@@ -1,6 +1,6 @@
 import { SoftDeleteModel } from 'mongoose-delete';
 
-import { IWorkflowOverride } from '@novu/shared';
+import { IWorkflowOverride } from '@teleflow/shared';
 
 import { BaseRepository } from '../base-repository';
 import { EnforceEnvId } from '../../types';

@@ -1,5 +1,5 @@
 import { FilterQuery } from 'mongoose';
-import { IMemberInvite, MemberRoleEnum, MemberStatusEnum } from '@novu/shared';
+import { IMemberInvite, MemberRoleEnum, MemberStatusEnum } from '@teleflow/shared';
 
 import { MemberEntity, MemberDBModel } from './member.entity';
 import { BaseRepository } from '../base-repository';

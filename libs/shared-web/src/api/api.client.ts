@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IParamObject } from '@novu/shared';
+import { IParamObject } from '@teleflow/shared';
 
 import { API_ROOT } from '../config';
 

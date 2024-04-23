@@ -6,12 +6,12 @@ import iFrameResize from 'iframe-resizer';
 import * as EventTypes from './shared/eventTypes';
 import { UnmountedError, DomainVerificationError } from './shared/errors';
 import { IFRAME_URL } from './shared/resources';
-import type { IStore, ITab, INotificationCenterStyles, ColorScheme } from '@novu/notification-center';
+import type { IStore, ITab, INotificationCenterStyles, ColorScheme } from '@teleflow/notification-center';
 
-const WEASL_WRAPPER_ID = 'novu-container';
-const IFRAME_ID = 'novu-iframe-element';
+const WEASL_WRAPPER_ID = 'teleflow-container';
+const IFRAME_ID = 'teleflow-iframe-element';
 
-class Novu {
+class Teleflow {
   public clientId: string | unknown;
 
   private backendUrl?: string = '';
@@ -106,7 +106,7 @@ class Novu {
 
       const { left } = pos;
       const { top } = pos;
-      const wrapper: any = document.querySelector('.wrapper-novu-widget');
+      const wrapper: any = document.querySelector('.wrapper-teleflow-widget');
 
       wrapper.style.position = 'absolute';
       if (_this.options?.position?.left) {
@@ -131,7 +131,7 @@ class Novu {
     }
 
     function hideWidget() {
-      const elem = document.querySelector('.wrapper-novu-widget') as HTMLBodyElement;
+      const elem = document.querySelector('.wrapper-teleflow-widget') as HTMLBodyElement;
 
       if (elem) {
         elem.style.display = 'none';
@@ -143,7 +143,7 @@ class Novu {
         _scope.widgetVisible = !_scope.widgetVisible;
         positionIframe();
 
-        const elem = document.querySelector('.wrapper-novu-widget') as HTMLBodyElement;
+        const elem = document.querySelector('.wrapper-teleflow-widget') as HTMLBodyElement;
         const isWidgetHidden = elem && elem.style.display === 'none';
 
         if (isWidgetHidden) {
@@ -183,7 +183,7 @@ class Novu {
   // PRIVATE METHODS
   ensureMounted = () => {
     if (!document.getElementById(IFRAME_ID)) {
-      throw new UnmountedError('novu.init needs to be called first');
+      throw new UnmountedError('teleflow.init needs to be called first');
     }
   };
 
@@ -215,11 +215,11 @@ class Novu {
   };
 
   handleBootstrapDone = () => {
-    const novuApi = (window as any).novu;
-    novuApi._c = (window as any).novu._c;
+    const teleflowApi = (window as any).teleflow;
+    teleflowApi._c = (window as any).teleflow._c;
 
     this.runPriorCalls();
-    (window as any).novu = novuApi;
+    (window as any).teleflow = teleflowApi;
   };
 
   handleDomainNotAllowed = () => {
@@ -335,7 +335,7 @@ class Novu {
 
   runPriorCalls = () => {
     const allowedCalls: string[] = [];
-    const priorCalls = window.novu && window.novu._c && typeof window.novu._c === 'object' ? window.novu._c : [];
+    const priorCalls = window.teleflow && window.teleflow._c && typeof window.teleflow._c === 'object' ? window.teleflow._c : [];
     priorCalls.forEach((call: string[]) => {
       const method: any = call[0];
       const args = call[1];
@@ -345,7 +345,7 @@ class Novu {
         (this[method as any] as any).apply(this, args);
       }
     });
-    this.onloadFunc.call(window.novu, window.novu);
+    this.onloadFunc.call(window.teleflow, window.teleflow);
   };
 
   mountIframe = () => {
@@ -354,7 +354,7 @@ class Novu {
 
       const wrapper = document.createElement('div');
 
-      wrapper.className = 'wrapper-novu-widget';
+      wrapper.className = 'wrapper-teleflow-widget';
       wrapper.style.display = 'none';
       wrapper.id = WEASL_WRAPPER_ID;
       (
@@ -368,42 +368,42 @@ class Novu {
 
 export default ((window: any) => {
   const onloadFunc =
-    window.novu && window.novu.onload && typeof window.novu.onload === 'function' ? window.novu.onload : function () {};
+    window.teleflow && window.teleflow.onload && typeof window.teleflow.onload === 'function' ? window.teleflow.onload : function () {};
 
-  const initCall = window.novu._c.find((call: string[]) => call[0] === 'init');
-  const novuApi: any = () => {};
-  const novu = new Novu(onloadFunc);
+  const initCall = window.teleflow._c.find((call: string[]) => call[0] === 'init');
+  const teleflowApi: any = () => {};
+  const teleflow = new Teleflow(onloadFunc);
 
-  novuApi.init = novu.init;
-  novuApi.on = novu.on;
-  novuApi.logout = novu.logout;
+  teleflowApi.init = teleflow.init;
+  teleflowApi.on = teleflow.on;
+  teleflowApi.logout = teleflow.logout;
 
   if (initCall) {
     // eslint-disable-next-line prefer-spread
-    novuApi[initCall[0]].apply(novuApi, initCall[1]);
+    teleflowApi[initCall[0]].apply(teleflowApi, initCall[1]);
 
-    const onCalls = window.novu._c.filter((call: string[]) => call[0] === 'on');
+    const onCalls = window.teleflow._c.filter((call: string[]) => call[0] === 'on');
     if (onCalls.length) {
       for (const onCall of onCalls) {
-        novuApi[onCall[0]].apply(novuApi, onCall[1]);
+        teleflowApi[onCall[0]].apply(teleflowApi, onCall[1]);
       }
     }
 
-    const logoutCalls = window.novu._c.filter((call: string[]) => call[0] === 'logout');
+    const logoutCalls = window.teleflow._c.filter((call: string[]) => call[0] === 'logout');
     if (logoutCalls.length) {
       for (const logoutCall of logoutCalls) {
-        novuApi[logoutCall[0]].apply(novuApi, logoutCall[1]);
+        teleflowApi[logoutCall[0]].apply(teleflowApi, logoutCall[1]);
       }
     }
   } else {
     // eslint-disable-next-line no-param-reassign
-    (window as any).novu.init = novu.init;
+    (window as any).teleflow.init = teleflow.init;
 
     // eslint-disable-next-line no-param-reassign
-    (window as any).novu.on = novu.on;
+    (window as any).teleflow.on = teleflow.on;
 
     // eslint-disable-next-line no-param-reassign
-    (window as any).novu.logout = novu.logout;
+    (window as any).teleflow.logout = teleflow.logout;
   }
 })(window);
 

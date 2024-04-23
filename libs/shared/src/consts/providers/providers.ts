@@ -12,10 +12,10 @@ export const providers: IProviderConfig[] = [
   ...inAppProviders,
 ];
 
-export const NOVU_PROVIDERS: ProvidersIdEnum[] = [
-  InAppProviderIdEnum.Novu,
-  SmsProviderIdEnum.Novu,
-  EmailProviderIdEnum.Novu,
+export const TELEFLOW_PROVIDERS: ProvidersIdEnum[] = [
+  InAppProviderIdEnum.Teleflow,
+  SmsProviderIdEnum.Teleflow,
+  EmailProviderIdEnum.Teleflow,
 ];
 
-export const NOVU_SMS_EMAIL_PROVIDERS: ProvidersIdEnum[] = [SmsProviderIdEnum.Novu, EmailProviderIdEnum.Novu];
+export const TELEFLOW_SMS_EMAIL_PROVIDERS: ProvidersIdEnum[] = [SmsProviderIdEnum.Teleflow, EmailProviderIdEnum.Teleflow];

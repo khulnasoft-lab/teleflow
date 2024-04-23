@@ -1,4 +1,4 @@
-import { IPreferenceChannels } from '@novu/shared';
+import { IPreferenceChannels } from '@teleflow/shared';
 
 import type { EnvironmentId } from '../environment';
 import type { OrganizationId } from '../organization';

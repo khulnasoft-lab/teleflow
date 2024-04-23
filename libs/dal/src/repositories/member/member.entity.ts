@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import { IMemberInvite, MemberRoleEnum, MemberStatusEnum } from '@novu/shared';
+import { IMemberInvite, MemberRoleEnum, MemberStatusEnum } from '@teleflow/shared';
 
 import { UserEntity } from '../user';
 import type { OrganizationId } from '../organization';

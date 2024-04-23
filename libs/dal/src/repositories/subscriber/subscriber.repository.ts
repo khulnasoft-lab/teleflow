@@ -7,7 +7,7 @@ import { IExternalSubscribersEntity } from './types';
 import { BaseRepository } from '../base-repository';
 import { DalException } from '../../shared';
 import type { EnforceEnvOrOrgIds } from '../../types';
-import { EnvironmentId, ISubscribersDefine, OrganizationId } from '@novu/shared';
+import { EnvironmentId, ISubscribersDefine, OrganizationId } from '@teleflow/shared';
 
 type SubscriberQuery = FilterQuery<SubscriberDBModel> & EnforceEnvOrOrgIds;
 type SubscriberDeleteQuery = Pick<SubscriberQuery, 'subscriberId' | '_environmentId'> & EnforceEnvOrOrgIds;

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useQuery, useQueryClient, UseQueryOptions } from '@tanstack/react-query';
-import { IEnvironment } from '@novu/shared';
+import { IEnvironment } from '@teleflow/shared';
 
 import { getCurrentEnvironment, getMyEnvironments } from '../api/environment';
 

@@ -21,7 +21,7 @@ const getOutputFilePath = (suffix) => {
   return `${OUTPUT_PATH}/${OUTPUT_FILE_NAME}${suffix ?? ''}.${OUTPUT_FILE_EXTENSION}`;
 };
 
-const NOVU_ICON_REGEX = /^Icon(?!Button)[A-Z0-9]{1}[a-zA-Z0-9]+$/;
+const TELEFLOW_ICON_REGEX = /^Icon(?!Button)[A-Z0-9]{1}[a-zA-Z0-9]+$/;
 const RELATIVE_PATH_REGEX = /^(\.(\.){0,}\/)/;
 const ANTD_ICON_MODULE_NAME = '@ant-design/icons';
 
@@ -33,12 +33,12 @@ module.exports = {
   includeSubComponents: true,
   /**
    * Regex for determining which imports to include.
-   * Currently includes: novu, antd, mantine, and local imports
+   * Currently includes: teleflow, antd, mantine, and local imports
    *
    * To see only local imports, replace with: /(\.(\.){0,}\/.*)/gim
    */
   importedFrom:
-    /(@novu\/(design-system|shared-web|notification-center)|@mantine\/core|@ant-design)(\/[a-z0-9\-)]+){0,}|(\.(\.){0,}\/.*)/gim,
+    /(@teleflow\/(design-system|shared-web|notification-center)|@mantine\/core|@ant-design)(\/[a-z0-9\-)]+){0,}|(\.(\.){0,}\/.*)/gim,
   exclude: ['/src/api', '/src/styled-system'],
   processors: [countComponentsAndPropsProcessor({ minNumInstances: 1 }), groupByNamespaceProcessor],
   /** file patterns to scan */
@@ -55,12 +55,12 @@ function getComponentName({ imported, local, moduleName, importType }) {
     return `web/${importedName}`;
   }
 
-  // get the module namespace / org (AKA novu or mantine), but remove @
+  // get the module namespace / org (AKA teleflow or mantine), but remove @
   const moduleOrg = moduleName.split('/').join('_').replace('@', '');
 
-  // group Icons if from Novu Design System or AntD
+  // group Icons if from Teleflow Design System or AntD
   const name =
-    (moduleName === '@novu/design-system' && NOVU_ICON_REGEX.test(importedName)) || moduleName === ANTD_ICON_MODULE_NAME
+    (moduleName === '@teleflow/design-system' && TELEFLOW_ICON_REGEX.test(importedName)) || moduleName === ANTD_ICON_MODULE_NAME
       ? 'Icon'
       : importedName;
 
@@ -132,7 +132,7 @@ function countComponentsAndPropsProcessor({ minNumInstances = 1 } = {}) {
 
 /**
  * @precondition Must be called after `countComponentsAndPropsProcessor` in the processors array.
- * Processor for grouping by namespace (i.e. Novu, Mantine, etc)
+ * Processor for grouping by namespace (i.e. Teleflow, Mantine, etc)
  */
 function groupByNamespaceProcessor({ prevResult, output }) {
   const result = Object.entries(prevResult).reduce((groupedResult, [compKey, compVal]) => {

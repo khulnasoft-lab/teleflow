@@ -1,4 +1,4 @@
-import { ExecutionDetailsStatusEnum } from '@novu/shared';
+import { ExecutionDetailsStatusEnum } from '@teleflow/shared';
 
 import { ExecutionDetailsEntity, ExecutionDetailsDBModel } from './execution-details.entity';
 import { ExecutionDetails } from './execution-details.schema';

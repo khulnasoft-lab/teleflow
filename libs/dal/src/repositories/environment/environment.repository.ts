@@ -1,4 +1,4 @@
-import { EncryptedSecret, IApiRateLimitMaximum } from '@novu/shared';
+import { EncryptedSecret, IApiRateLimitMaximum } from '@teleflow/shared';
 import { BaseRepository } from '../base-repository';
 import { IApiKey, EnvironmentEntity, EnvironmentDBModel } from './environment.entity';
 import { Environment } from './environment.schema';

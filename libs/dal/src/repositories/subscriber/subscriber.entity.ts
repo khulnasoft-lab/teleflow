@@ -1,4 +1,4 @@
-import { SubscriberCustomData, ChatProviderIdEnum, PushProviderIdEnum } from '@novu/shared';
+import { SubscriberCustomData, ChatProviderIdEnum, PushProviderIdEnum } from '@teleflow/shared';
 
 import { ExternalSubscriberId } from './types';
 import type { OrganizationId } from '../organization';

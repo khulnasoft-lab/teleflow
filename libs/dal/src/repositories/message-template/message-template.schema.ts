@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
-import { ActorTypeEnum } from '@novu/shared';
+import { ActorTypeEnum } from '@teleflow/shared';
 import * as mongooseDelete from 'mongoose-delete';
 
 import { schemaOptions } from '../schema-default.options';

@@ -1,4 +1,4 @@
-import { getContextPath, NovuComponentEnum, FeatureFlagsKeysEnum } from '@novu/shared';
+import { getContextPath, TeleflowComponentEnum, FeatureFlagsKeysEnum } from '@teleflow/shared';
 
 function isBrowser() {
   return typeof window !== 'undefined';
@@ -28,14 +28,14 @@ export const SENTRY_DSN = window._env_.REACT_APP_SENTRY_DSN || process.env.REACT
 
 export const ENV = window._env_.REACT_APP_ENVIRONMENT || process.env.REACT_APP_ENVIRONMENT;
 
-const blueprintApiUrlByEnv = ENV === 'production' || ENV === 'prod' ? 'https://api.novu.co' : 'https://dev.api.novu.co';
+const blueprintApiUrlByEnv = ENV === 'production' || ENV === 'prod' ? 'https://api-teleflow.khulnasoft.com' : 'https://dev.api-teleflow.khulnasoft.com';
 
 export const BLUEPRINTS_API_URL =
   window._env_.REACT_APP_BLUEPRINTS_API_URL || isCypress || isPlaywright
     ? window._env_.REACT_APP_BLUEPRINTS_API_URL || process.env.REACT_APP_BLUEPRINTS_API_URL || 'http://localhost:1336'
     : blueprintApiUrlByEnv;
 
-export const APP_ID = window._env_.REACT_APP_NOVU_APP_ID || process.env.REACT_APP_NOVU_APP_ID;
+export const APP_ID = window._env_.REACT_APP_TELEFLOW_APP_ID || process.env.REACT_APP_TELEFLOW_APP_ID;
 
 export const WIDGET_EMBED_PATH =
   window._env_.REACT_APP_WIDGET_EMBED_PATH ||
@@ -45,11 +45,11 @@ export const WIDGET_EMBED_PATH =
 export const IS_DOCKER_HOSTED =
   window._env_.REACT_APP_DOCKER_HOSTED_ENV === 'true' || process.env.REACT_APP_DOCKER_HOSTED_ENV === 'true';
 
-export const REACT_APP_VERSION = process.env.NOVU_VERSION;
+export const REACT_APP_VERSION = process.env.TELEFLOW_VERSION;
 
 export const INTERCOM_APP_ID = window._env_.REACT_APP_INTERCOM_APP_ID || process.env.REACT_APP_INTERCOM_APP_ID;
 
-export const CONTEXT_PATH = getContextPath(NovuComponentEnum.WEB);
+export const CONTEXT_PATH = getContextPath(TeleflowComponentEnum.WEB);
 
 export const WEBHOOK_URL =
   isCypress || isPlaywright
@@ -57,7 +57,7 @@ export const WEBHOOK_URL =
     : window._env_.REACT_APP_WEBHOOK_URL || process.env.REACT_APP_WEBHOOK_URL || 'http://localhost:3003';
 
 export const MAIL_SERVER_DOMAIN =
-  window._env_.REACT_APP_MAIL_SERVER_DOMAIN || process.env.REACT_APP_MAIL_SERVER_DOMAIN || 'dev.inbound-mail.novu.co';
+  window._env_.REACT_APP_MAIL_SERVER_DOMAIN || process.env.REACT_APP_MAIL_SERVER_DOMAIN || 'dev.inbound-mail.teleflow.khulnasoft.com';
 
 export const LAUNCH_DARKLY_CLIENT_SIDE_ID =
   window._env_.REACT_APP_LAUNCH_DARKLY_CLIENT_SIDE_ID || process.env.REACT_APP_LAUNCH_DARKLY_CLIENT_SIDE_ID;

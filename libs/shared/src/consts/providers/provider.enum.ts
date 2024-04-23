@@ -65,7 +65,7 @@ export enum EmailProviderIdEnum {
   Mailtrap = 'mailtrap',
   Clickatell = 'clickatell',
   Outlook365 = 'outlook365',
-  Novu = 'novu-email',
+  Teleflow = 'teleflow-email',
   SparkPost = 'sparkpost',
   EmailWebhook = 'email-webhook',
   Braze = 'braze',
@@ -91,7 +91,7 @@ export enum SmsProviderIdEnum {
   Maqsam = 'maqsam',
   Termii = 'termii',
   AfricasTalking = 'africas-talking',
-  Novu = 'novu-sms',
+  Teleflow = 'teleflow-sms',
   Sendchamp = 'sendchamp',
   GenericSms = 'generic-sms',
   Clicksend = 'clicksend',
@@ -127,7 +127,7 @@ export enum PushProviderIdEnum {
 }
 
 export enum InAppProviderIdEnum {
-  Novu = 'novu',
+  Teleflow = 'teleflow',
 }
 
 export type ProvidersIdEnum =

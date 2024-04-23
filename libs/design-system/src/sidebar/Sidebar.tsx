@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Drawer, Loader, Stack } from '@mantine/core';
-import { useKeyDown } from '@novu/shared-web';
+import { useKeyDown } from '@teleflow/shared-web';
 
 import { ActionButton } from '../button/ActionButton';
 import { colors } from '../config';

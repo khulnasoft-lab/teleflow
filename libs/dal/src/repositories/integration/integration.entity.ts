@@ -1,4 +1,4 @@
-import { BuilderFieldType, BuilderGroupValues, ChannelTypeEnum, FilterParts, ICredentials } from '@novu/shared';
+import { BuilderFieldType, BuilderGroupValues, ChannelTypeEnum, FilterParts, ICredentials } from '@teleflow/shared';
 
 import type { EnvironmentId } from '../environment';
 import type { OrganizationId } from '../organization';

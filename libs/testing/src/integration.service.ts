@@ -1,6 +1,6 @@
 import * as shortid from 'shortid';
 import slugify from 'slugify';
-import { EnvironmentRepository, IntegrationRepository } from '@novu/dal';
+import { EnvironmentRepository, IntegrationRepository } from '@teleflow/dal';
 import {
   ChannelTypeEnum,
   ChatProviderIdEnum,
@@ -9,7 +9,7 @@ import {
   ProvidersIdEnum,
   PushProviderIdEnum,
   SmsProviderIdEnum,
-} from '@novu/shared';
+} from '@teleflow/shared';
 
 export class IntegrationService {
   private integrationRepository = new IntegrationRepository();
@@ -46,7 +46,7 @@ export class IntegrationService {
           providerId = PushProviderIdEnum.FCM;
           break;
         case ChannelTypeEnum.IN_APP:
-          providerId = InAppProviderIdEnum.Novu;
+          providerId = InAppProviderIdEnum.Teleflow;
           break;
         default:
           throw new Error('Invalid channel type');
@@ -80,29 +80,29 @@ export class IntegrationService {
   }
 
   async createChannelIntegrations(environmentId: string, organizationId: string) {
-    const novuMailPayload = {
+    const teleflowMailPayload = {
       _environmentId: environmentId,
       _organizationId: organizationId,
-      providerId: EmailProviderIdEnum.Novu,
+      providerId: EmailProviderIdEnum.Teleflow,
       channel: ChannelTypeEnum.EMAIL,
       credentials: {},
       active: false,
-      identifier: 'novu-email',
+      identifier: 'teleflow-email',
     };
 
-    await this.integrationRepository.create(novuMailPayload);
+    await this.integrationRepository.create(teleflowMailPayload);
 
-    const novuSmsPayload = {
+    const teleflowSmsPayload = {
       _environmentId: environmentId,
       _organizationId: organizationId,
-      providerId: SmsProviderIdEnum.Novu,
+      providerId: SmsProviderIdEnum.Teleflow,
       channel: ChannelTypeEnum.SMS,
       credentials: {},
       active: false,
-      identifier: 'novu-sms',
+      identifier: 'teleflow-sms',
     };
 
-    await this.integrationRepository.create(novuSmsPayload);
+    await this.integrationRepository.create(teleflowSmsPayload);
 
     const mailPayload = {
       _environmentId: environmentId,
@@ -170,13 +170,13 @@ export class IntegrationService {
     const inAppPayload = {
       _environmentId: environmentId,
       _organizationId: organizationId,
-      providerId: InAppProviderIdEnum.Novu,
+      providerId: InAppProviderIdEnum.Teleflow,
       channel: ChannelTypeEnum.IN_APP,
       credentials: {
         hmac: false,
       },
       active: true,
-      identifier: 'novu-in-app',
+      identifier: 'teleflow-in-app',
     };
 
     await this.integrationRepository.create(inAppPayload);

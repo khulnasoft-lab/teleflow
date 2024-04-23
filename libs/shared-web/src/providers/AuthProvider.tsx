@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { IOrganizationEntity, IUserEntity, IJwtPayload } from '@novu/shared';
+import { IOrganizationEntity, IUserEntity, IJwtPayload } from '@teleflow/shared';
 import { useAuthController, useFeatureFlags } from '../hooks';
 
 type UserContext = {

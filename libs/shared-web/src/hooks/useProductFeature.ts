@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, productFeatureEnabledForServiceLevel, ProductFeatureKeyEnum } from '@novu/shared';
+import { ApiServiceLevelEnum, productFeatureEnabledForServiceLevel, ProductFeatureKeyEnum } from '@teleflow/shared';
 import { useEffect, useState } from 'react';
 import { useAuthController } from './useAuthController';
 

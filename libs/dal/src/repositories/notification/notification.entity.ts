@@ -1,4 +1,4 @@
-import { ISubscribersDefine, StepTypeEnum } from '@novu/shared';
+import { ISubscribersDefine, StepTypeEnum } from '@teleflow/shared';
 
 import { NotificationTemplateEntity } from '../notification-template';
 import type { OrganizationId } from '../organization';

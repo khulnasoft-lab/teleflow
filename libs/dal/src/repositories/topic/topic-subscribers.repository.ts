@@ -1,4 +1,4 @@
-import { ExternalSubscriberId } from '@novu/shared';
+import { ExternalSubscriberId } from '@teleflow/shared';
 
 import {
   CreateTopicSubscribersEntity,

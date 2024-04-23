@@ -1,1 +1,1 @@
-export { WorkflowOverrideId } from '@novu/shared';
+export { WorkflowOverrideId } from '@teleflow/shared';

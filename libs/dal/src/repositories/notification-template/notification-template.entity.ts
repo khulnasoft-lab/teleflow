@@ -16,7 +16,7 @@ import {
   INotificationTemplateStep,
   IMessageTemplate,
   NotificationTemplateTypeEnum,
-} from '@novu/shared';
+} from '@teleflow/shared';
 
 import { NotificationGroupEntity } from '../notification-group';
 import type { OrganizationId } from '../organization';

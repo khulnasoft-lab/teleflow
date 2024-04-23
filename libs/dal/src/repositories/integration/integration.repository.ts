@@ -1,6 +1,6 @@
 import { FilterQuery } from 'mongoose';
 import { SoftDeleteModel } from 'mongoose-delete';
-import { NOVU_PROVIDERS } from '@novu/shared';
+import { TELEFLOW_PROVIDERS } from '@teleflow/shared';
 
 import { IntegrationEntity, IntegrationDBModel } from './integration.entity';
 import { Integration } from './integration.schema';
@@ -50,7 +50,7 @@ export class IntegrationRepository extends BaseRepository<IntegrationDBModel, In
     );
   }
 
-  async countActiveExcludingNovu({
+  async countActiveExcludingTeleflow({
     _organizationId,
     _environmentId,
     channel,
@@ -61,7 +61,7 @@ export class IntegrationRepository extends BaseRepository<IntegrationDBModel, In
       channel,
       active: true,
       providerId: {
-        $nin: NOVU_PROVIDERS,
+        $nin: TELEFLOW_PROVIDERS,
       },
     });
   }

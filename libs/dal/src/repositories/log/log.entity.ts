@@ -1,4 +1,4 @@
-import { LogCodeEnum, LogStatusEnum } from '@novu/shared';
+import { LogCodeEnum, LogStatusEnum } from '@teleflow/shared';
 
 import type { OrganizationId } from '../organization';
 import type { EnvironmentId } from '../environment';

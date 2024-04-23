@@ -5,7 +5,7 @@ import {
   DEFAULT_MESSAGE_GENERIC_RETENTION_DAYS,
   DEFAULT_MESSAGE_IN_APP_RETENTION_DAYS,
   DEFAULT_NOTIFICATION_RETENTION_DAYS,
-} from '@novu/shared';
+} from '@teleflow/shared';
 import { Model, Types, ProjectionType, FilterQuery, UpdateQuery, QueryOptions } from 'mongoose';
 import { DalException } from '../shared';
 

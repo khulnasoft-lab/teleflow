@@ -1,4 +1,4 @@
-import { ChangeEntityTypeEnum } from '@novu/shared';
+import { ChangeEntityTypeEnum } from '@teleflow/shared';
 
 import { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';

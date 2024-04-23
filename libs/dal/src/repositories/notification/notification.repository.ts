@@ -1,5 +1,5 @@
 import { FilterQuery, QueryWithHelpers, Types } from 'mongoose';
-import { ChannelTypeEnum, StepTypeEnum } from '@novu/shared';
+import { ChannelTypeEnum, StepTypeEnum } from '@teleflow/shared';
 import { subMonths, subWeeks } from 'date-fns';
 
 import { BaseRepository } from '../base-repository';

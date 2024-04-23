@@ -865,7 +865,7 @@ export const africasTalkingConfig: IConfigCredentials[] = [
   ...smsConfigBase,
 ];
 
-export const novuInAppConfig: IConfigCredentials[] = [
+export const teleflowInAppConfig: IConfigCredentials[] = [
   {
     key: CredentialsKeyEnum.Hmac,
     displayName: 'Security HMAC encryption',

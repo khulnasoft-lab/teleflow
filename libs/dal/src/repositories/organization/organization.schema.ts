@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@teleflow/shared';
 
 import { schemaOptions } from '../schema-default.options';
 import { OrganizationDBModel, PartnerTypeEnum } from './organization.entity';

@@ -1,4 +1,4 @@
-import { AuthProviderEnum, IUserEntity, JobTitleEnum } from '@novu/shared';
+import { AuthProviderEnum, IUserEntity, JobTitleEnum } from '@teleflow/shared';
 import { Exclude } from 'class-transformer';
 
 import { UserId } from './types';

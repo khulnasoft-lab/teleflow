@@ -2,7 +2,7 @@ import { IPartnerConfiguration, OrganizationDBModel, OrganizationEntity } from '
 import { BaseRepository } from '../base-repository';
 import { Organization } from './organization.schema';
 import { MemberRepository } from '../member';
-import { ApiServiceLevelEnum } from '@novu/shared';
+import { ApiServiceLevelEnum } from '@teleflow/shared';
 
 export class OrganizationRepository extends BaseRepository<OrganizationDBModel, OrganizationEntity, object> {
   private memberRepository = new MemberRepository();

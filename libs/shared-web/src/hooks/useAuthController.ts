@@ -4,7 +4,7 @@ import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import * as Sentry from '@sentry/react';
-import type { IJwtPayload, IOrganizationEntity, IUserEntity } from '@novu/shared';
+import type { IJwtPayload, IOrganizationEntity, IUserEntity } from '@teleflow/shared';
 
 import { useSegment } from '../providers';
 import { api } from '../api';

@@ -1,5 +1,5 @@
 {
-  "name": "@novu/shared-web",
+  "name": "@teleflow/shared-web",
   "version": "0.24.1",
   "repository": "https://github.com/khulnasoft/teleflow",
   "description": "",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@mantine/hooks": "^5.7.1",
-    "@novu/shared": "^0.24.1",
+    "@teleflow/shared": "^0.24.1",
     "@segment/analytics-next": "1.59.0",
     "@emotion/styled": "^11.6.0",
     "@sentry/react": "^7.40.0",

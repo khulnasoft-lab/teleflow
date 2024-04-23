@@ -1,6 +1,6 @@
 {
-  "name": "@novu/shared",
-  "version": "0.24.1",
+  "name": "@teleflow/shared",
+  "version": "0.24.1-beta",
   "description": "",
   "scripts": {
     "start": "npm run start:dev",

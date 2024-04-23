@@ -1,4 +1,4 @@
-import { FeatureFlagsKeysEnum, IOrganizationEntity, prepareBooleanStringFeatureFlag } from '@novu/shared';
+import { FeatureFlagsKeysEnum, IOrganizationEntity, prepareBooleanStringFeatureFlag } from '@teleflow/shared';
 import { useFlags } from 'launchdarkly-react-client-sdk';
 import { useLDClient } from 'launchdarkly-react-client-sdk';
 import { useEffect } from 'react';

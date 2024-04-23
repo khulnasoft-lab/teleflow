@@ -1,4 +1,4 @@
-import { ApiServiceLevelEnum, IOrganizationEntity, ProductUseCases } from '@novu/shared';
+import { ApiServiceLevelEnum, IOrganizationEntity, ProductUseCases } from '@teleflow/shared';
 
 export class OrganizationEntity implements IOrganizationEntity {
   _id: string;

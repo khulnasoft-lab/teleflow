@@ -3,8 +3,8 @@ import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
 import { ThemeProvider } from '../src/ThemeProvider';
 import { DocsContainer } from './Doc.container';
-import { useLocalThemePreference } from '@novu/shared-web';
-import { lightTheme, darkTheme } from './NovuTheme';
+import { useLocalThemePreference } from '@teleflow/shared-web';
+import { lightTheme, darkTheme } from './TeleflowTheme';
 import { Parameters, Decorator } from '@storybook/react'
 
 // Bring in the Panda-generated stylesheets

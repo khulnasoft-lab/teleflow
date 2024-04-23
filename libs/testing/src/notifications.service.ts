@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { ChannelTypeEnum } from '@novu/shared';
-import { MessageRepository } from '@novu/dal';
+import { ChannelTypeEnum } from '@teleflow/shared';
+import { MessageRepository } from '@teleflow/dal';
 
 export class NotificationsService {
   private messageRepository = new MessageRepository();

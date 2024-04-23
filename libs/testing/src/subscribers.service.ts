@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { IntegrationRepository, SubscriberEntity, SubscriberRepository } from '@novu/dal';
-import { ChatProviderIdEnum, PushProviderIdEnum } from '@novu/shared';
+import { IntegrationRepository, SubscriberEntity, SubscriberRepository } from '@teleflow/dal';
+import { ChatProviderIdEnum, PushProviderIdEnum } from '@teleflow/shared';
 
 export class SubscribersService {
   private subscriberRepository = new SubscriberRepository();

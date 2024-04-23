@@ -4,4 +4,4 @@ export {
   ITemplateVariable,
   TemplateVariableTypeEnum,
   TextAlignEnum,
-} from '@novu/shared';
+} from '@teleflow/shared';
