@@ -1,40 +1,46 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s",
-      "!{projectRoot}/test-setup.[jt]s"
+  "extends": "@nrwl/workspace/presets/npm.json",
+  "npmScope": "novuhq",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint", "package", "prepare"],
+        "canTrackAnalytics": false,
+        "accessToken": "N2EyNDhhMGUtYmJkNS00YzQ5LTg5NDYtODg5ZmE2NDE5YWNmfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "inputs": ["!{projectRoot}/enterprise/**/*"],
+        "projects": "dependencies"
+      }
     ],
-    "sharedGlobals": []
+    "prepare": [
+      {
+        "target": "prepare",
+        "projects": "dependencies"
+      }
+    ],
+    "package": [
+      {
+        "target": "package",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "affected": {
+    "defaultBase": "main"
   },
   "targetDefaults": {
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    }
-  },
-  "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
+    "build-ee": {
+      "dependsOn": ["^build-ee"]
     },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
+    "build": {
+      "dependsOn": ["^build"]
     }
-  ],
-  "nxCloudAccessToken": "YjM0NDg5NmQtYjIyYy00MDc3LWI1ZDItMDk1YzcwZWVkMjIwfHJlYWQtd3JpdGU=",
-  "defaultBase": "main"
+  }
 }
